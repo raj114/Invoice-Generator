@@ -3,6 +3,8 @@ import { defineConfig } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
+  base: "/Invoice-Generator/", // IMPORTANT for GitHub Pages
+
   plugins: [
     react(),
     VitePWA({
@@ -29,23 +31,22 @@ export default defineConfig({
       manifest: {
         name: "PDF Generator - Invoice Creator",
         short_name: "PDF Gen",
-        description:
-          "Generate professional PDF invoices with client and item details",
+        description: "Generate professional PDF invoices with client and item details",
         theme_color: "#667eea",
         background_color: "#ffffff",
         display: "standalone",
         orientation: "portrait",
-        start_url: "/",
-        scope: "/",
+        start_url: "/Invoice-Generator/",
+        scope: "/Invoice-Generator/",
         icons: [
           {
-            src: "/logo.png",
+            src: "/Invoice-Generator/logo.png",
             sizes: "192x192",
             type: "image/png",
             purpose: "any",
           },
           {
-            src: "/logo.png",
+            src: "/Invoice-Generator/logo.png",
             sizes: "512x512",
             type: "image/png",
             purpose: "any",
