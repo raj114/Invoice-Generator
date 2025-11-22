@@ -5,6 +5,7 @@
 The `base` path in `vite.config.js` **MUST** match your GitHub repository name exactly.
 
 ### Current Configuration
+
 - Base path: `/Invoice-Generator/`
 - This means your repository must be named: `Invoice-Generator`
 
@@ -21,10 +22,12 @@ The `base` path in `vite.config.js` **MUST** match your GitHub repository name e
 #### Option 1: Using GitHub Actions (Recommended)
 
 1. **Enable GitHub Pages:**
+
    - Go to your repository → Settings → Pages
    - Under "Source", select **"GitHub Actions"**
 
 2. **Push your code:**
+
    ```bash
    git add .
    git commit -m "Configure for GitHub Pages"
@@ -43,6 +46,7 @@ npm run deploy
 ```
 
 Then in GitHub:
+
 - Go to Settings → Pages
 - Select "Deploy from a branch"
 - Choose `gh-pages` branch and `/ (root)` folder
@@ -50,15 +54,18 @@ Then in GitHub:
 ### Testing Locally
 
 **For development (without base path):**
+
 ```bash
 npm run dev
 ```
 
 **For testing production build (with base path):**
+
 ```bash
 npm run build
 npm run preview
 ```
+
 Then open: `http://localhost:4173/Invoice-Generator/`
 
 ### Troubleshooting 404 Errors
@@ -66,15 +73,18 @@ Then open: `http://localhost:4173/Invoice-Generator/`
 If you see `main.jsx:1 Failed to load resource: 404`:
 
 1. **Check repository name matches:**
+
    - Your GitHub repo name must exactly match the `REPO_NAME` in `vite.config.js`
    - Case-sensitive!
 
 2. **Rebuild after changing config:**
+
    ```bash
    npm run build
    ```
 
 3. **Clear browser cache:**
+
    - Hard refresh: `Ctrl+Shift+R` (Windows/Linux) or `Cmd+Shift+R` (Mac)
    - Or clear cache in browser settings
 
@@ -88,4 +98,3 @@ If you see `main.jsx:1 Failed to load resource: 404`:
 - **White screen:** Check browser console for errors
 - **Service worker errors:** Clear browser cache and service workers
 - **Paths work locally but not on GitHub Pages:** Repository name mismatch
-
