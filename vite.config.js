@@ -2,8 +2,14 @@ import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
 
+// IMPORTANT: Change this to match your GitHub repository name
+// If your repo is "my-app", change to "/my-app/"
+// If deploying to root domain (username.github.io), use "/"
+const REPO_NAME = "Invoice-Generator";
+const base = `/${REPO_NAME}/`;
+
 export default defineConfig({
-  base: "/Invoice-Generator/", // IMPORTANT for GitHub Pages
+  base: base, // IMPORTANT for GitHub Pages - must match repository name
 
   plugins: [
     react(),
@@ -37,17 +43,17 @@ export default defineConfig({
         background_color: "#ffffff",
         display: "standalone",
         orientation: "portrait",
-        start_url: "/Invoice-Generator/",
-        scope: "/Invoice-Generator/",
+        start_url: base,
+        scope: base,
         icons: [
           {
-            src: "/Invoice-Generator/logo.png",
+            src: `${base}logo.png`,
             sizes: "192x192",
             type: "image/png",
             purpose: "any",
           },
           {
-            src: "/Invoice-Generator/logo.png",
+            src: `${base}logo.png`,
             sizes: "512x512",
             type: "image/png",
             purpose: "any",
