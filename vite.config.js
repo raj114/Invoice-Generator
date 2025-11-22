@@ -31,7 +31,8 @@ export default defineConfig({
       manifest: {
         name: "PDF Generator - Invoice Creator",
         short_name: "PDF Gen",
-        description: "Generate professional PDF invoices with client and item details",
+        description:
+          "Generate professional PDF invoices with client and item details",
         theme_color: "#667eea",
         background_color: "#ffffff",
         display: "standalone",
