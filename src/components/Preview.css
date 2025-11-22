@@ -1,0 +1,118 @@
+.preview-content {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hide elements when printing/generating PDF */
+.no-print {
+  @media print {
+    display: none;
+  }
+}
+
+.pdf-content {
+  background: white;
+  padding: 10px;
+  max-width: 210mm; /* A4 width */
+  margin: 0 auto;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* Optimize spacing for PDF */
+.pdf-content .ant-card {
+  margin-bottom: 8px !important;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.pdf-content .ant-card-body {
+  padding: 8px !important;
+}
+
+/* Table optimization for PDF */
+.pdf-content .ant-table {
+  page-break-inside: auto;
+  break-inside: auto;
+  font-size: 14px !important;
+}
+
+.pdf-content .ant-table-thead > tr > th {
+  background: #b3d9e6 !important;
+  page-break-after: avoid;
+  padding: 8px 10px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+.pdf-content .ant-table-tbody > tr {
+  page-break-inside: avoid;
+  page-break-after: auto;
+}
+
+.pdf-content .ant-table-tbody > tr > td {
+  padding: 8px 10px !important;
+  font-size: 14px !important;
+}
+
+/* Descriptions font size */
+.pdf-content .ant-descriptions-item-label {
+  padding: 4px 8px 4px 0 !important;
+  font-size: 14px !important;
+}
+
+.pdf-content .ant-descriptions-item-content {
+  padding: 4px 0 !important;
+  font-size: 14px !important;
+}
+
+/* Ensure images and text are sharp in PDF */
+.pdf-content img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  max-width: 100%;
+  height: auto;
+}
+
+.pdf-content * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.banner-header.orange-banner {
+  background: linear-gradient(
+    135deg,
+    #ff9800 0%,
+    #f57c00 50%,
+    #ff9800 100%
+  ) !important;
+  border: none !important;
+}
+
+.banner-header.orange-banner .ant-card-body {
+  background: transparent;
+}
+
+.services-list {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 16px;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  .pdf-content {
+    padding: 15px;
+  }
+}
